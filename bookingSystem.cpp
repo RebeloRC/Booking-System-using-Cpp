@@ -10,6 +10,8 @@ int main()
     int npoltrona;
     int F1[600];
     int i;
+    int preco;
+
 
     for ( i = 0; i < 100; i++)
     {
@@ -45,33 +47,45 @@ int main()
                 for  (i = 0; i < sizeof(F1)/4; i++)
                 {
                     if (F1[i] == npoltrona)
-                    {
-                        F1[i] = 0;
-                        if (npoltrona <= 200 & npoltrona > 0)
+                    {   
+
+                        if (F1[i] == 0 || npoltrona < 0 || npoltrona > 600)
                         {
+                            cout << "A poltrona selecionada não está disponivel";
+                            qtpoltronas++;
+                        }
+                       
+                        else if (npoltrona <= 200)
+                        {
+                            F1[i] = 0;
                             cout << "Poltrona "; cout << npoltrona; cout <<" selecionada com sucesso!\n";
-                            
+                            preco +=50;
                         }
 
-                        if (npoltrona <= 400 & npoltrona > 200)
+                        else if (npoltrona > 200 & npoltrona <= 400)
                         {
+                            F1[i] = 0;
                             cout << "Poltrona "; cout << npoltrona; cout <<" selecionada com sucesso!\n";
+                            preco +=30;
                         }
 
-                        if (npoltrona <= 600 & npoltrona > 400)
+                        else if (npoltrona > 400 & npoltrona <= 600)
                         {
+                            F1[i] = 0;
                             cout << "Poltrona "; cout << npoltrona; cout <<" selecionada com sucesso!\n";
+                            preco +=10;
                         }
-                        ;
-                    }
-                    else if(F1 == 0)
-                    {
-                        cout << "A poltrona solicitada não está disponivel";
+
+                        else 
+                        {
+                            cout << "A poltrona solicitada é invalida!\n";
+                        }
+
                     }
 
                 }
                 qtpoltronas--;
-            } while (qtpoltronas != 0);
+            } while (qtpoltronas > 0);
 
             cout<<"\n";
 
@@ -82,7 +96,9 @@ int main()
                 cout << F1[i]; cout << "\t";
             }            
 
-             cout<<"\n";
+            cout<<"\n";
+
+            cout << "O preço todal da sua compra foi de R$"; cout << preco;
             
             break;
 
