@@ -11,6 +11,7 @@ int resposta;
 
 void mostra_matriz(int **mat)
 {
+
 	int i;
 	int j;
 	int k;
@@ -45,39 +46,26 @@ void mostra_matriz(int **mat)
 
 void reserva_de_lugares(int **x)
 {
+	int i;
+	int j;
+	int coluna;
+	int fileira;
 
-	int resposta;
-	int selecionarpoltrona;
-	int selecionarfileira;
-	int selecionarcoluna;
 
-	for (int C=1; C < 15; C++)
+	cout << "Digite a fileira da poltrona de sejada: ";
+	cin >> fileira;
+
+	cout << "Digite o número da poltrona desejada";
+	cin >> coluna;
+
+	if (coluna <= COL)
 	{
-		for (int F=1; F < 40; F++)
+		if (x[coluna][fileira] == 0)
 		{
-		cout << setw(1) << (x[C][F]==0?".":"#") << "| ";
+			/* code */
 		}
+		
 	}
-
-	cout <<"\n\n Qual fileira deseja reservar?: ";
-	cin >> selecionarfileira;
-	cout <<"\n\n Qual coluna deseja reservar?: ";
-	cin >> selecionarcoluna;
-
-	if(selecionarcoluna <=5)
-	{
-		if(x[selecionarcoluna][selecionarfileira] == 0)
-		{
-			x[selecionarcoluna][selecionarfileira] = 1;
-			cout << "assento reservado\n\n";
-		}
-	}
-
-	else
-	{
-		cout << "assento indisponivel ";
-	}
-
 }
 
 
