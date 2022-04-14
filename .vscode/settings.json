@@ -3,6 +3,7 @@
     "files.associations": {
         "string_view": "cpp",
         "iostream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "locale.h": "cpp"
     }
 }
